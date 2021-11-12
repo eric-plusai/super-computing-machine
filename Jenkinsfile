@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent any
     stages {
-        stage('build') {
+        stage('No-ops') {
             steps {
-                sh 'python --version'
+                sh 'ls'
 		echo 'Hello Jenkins'
             }
         }
