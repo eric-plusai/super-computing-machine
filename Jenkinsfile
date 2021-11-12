@@ -8,4 +8,11 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            mail to: 'eric.shuai.wang@plus.ai',
+                 subject: "Succeeded Pipeline: ${currentBuild.fullDisplayName}",
+                 body: "Build url: ${env.BUILD_URL}"
+        }
+    }
 }
